@@ -50,3 +50,34 @@ use_git()#this automatically makes the repository and then looks at what exists 
 
 You do not need code for this, you can commit after any change you make to your script/markdown document, just save before you do. (this was unclear to me in the video, so that made making a new commit hard for me)
 
+
+Go to the Git tab, if you save your script, you should have something in this tab now, select the box and click commit, this saves the version in git
+
+5) Connecting R and GitHub
+
+```{r Connect R and GitHub}
+library(usethis)#dont have to do this if the library is already on from previous steps he just does this in the video
+
+#then you are going to create what is called a github token,it is a short link created by github that connects git in R to github online
+
+create_github_token()#running this opens a tab in github online, you rename the token then click generate. then copy and save the token
+
+library(gitcreds)#so you can enter the token
+gitcreds_set()#run this then paste in your token, this will allow you to sync between R studio and GitHub (website)
+
+```
+
+6) Put your project into GitHub
+```{r Put your project into GitHub}
+library(usethis)
+use_github()#when you run this it sends your project into github and opens a link with the repository in a new window
+
+#this didn't immediately work for me I had to go to my github and refresh to see the project
+
+```
+
+you can also create a repository in GitHub first, then copy the link and when you create a project you can create using version control, then your project will be connected to GitHub right away
+
+7) Push your code to GitHub
+
+you do this by saving your code, then committing the changes then pushing the code up, using the green push arrow in the Git tab. Once you do this when you click on the markdown file in GitHub you should see all the information you put

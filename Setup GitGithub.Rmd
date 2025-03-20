@@ -1,0 +1,52 @@
+---
+title: "Setup Git/Github"
+output: html_document
+date: "2025-03-20"
+---
+
+Source: https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r#:~:text=The%20most%20straightforward%20way%20to,you're%20good%20to%20go.
+
+
+This is all info that can be found in the link above with video that shows you how to do each of these steps!
+
+
+1) Step One 
+
+  A) is to download Git (this is the software) and install it on your computer
+
+      https://git-scm.com/downloads
+
+  B) another part of step one is to setup a github account 
+      https://github.com/  
+      
+2) Step Two Get R to talk to Git
+
+```{r Configure Git}
+#use this is a package that helps you talk to git (computer software) to install uncomment the line of code below and install and turn on package
+
+#install.packages("usethis")
+library(usethis)#turn on package
+
+#now you are connecting r to git, insert your username and email connected to your account 
+use_git_config(user.name="yourusername",user.email="yourgitemail")
+
+```
+
+3) Create a Git Repository
+
+```{r Create a Git Repository}
+
+#in order to do this you need to be working in a project. When you create a project you can select to automatically create a Git Repository
+
+library(usethis)
+use_git()#this automatically makes the repository and then looks at what exists in your projects and asks you if its ok to commit them and restart r. you respond with whatever number 1,2, or 3 that says yes commit them.
+
+
+#After R restarts,  you should have a Git tab by your environment
+
+```
+
+4) Commit your project to Git
+
+You do not need code for this, you can commit after any change you make to your script/markdown document, just save before you do. (this was unclear to me in the video, so that made making a new commit hard for me)
+
